@@ -9,11 +9,12 @@ const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI;
 
 // Middleware
-app.use(express.json());
+app.use(express.json()); // Parse JSON request bodies
+app.use(express.urlencoded({ extended: true })); // Parse URL-encoded request bodies
 
 // Routes
-app.use('/api/products', productRoutes);
-app.use('/api/cart', cartRoutes);
+app.use('/api/products', productRoutes); // Product-related routes
+app.use('/api/cart', cartRoutes); // Cart-related routes
 
 // Connect to MongoDB
 mongoose
