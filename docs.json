@@ -1,0 +1,76 @@
+{
+    "info": {
+      "_postman_id": "ecommerce-api-docs",
+      "name": "E-Commerce API",
+      "description": "API documentation for the e-commerce application.",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Products",
+        "item": [
+          {
+            "name": "Get All Products",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "https://reactecomgdi.onrender.com/api/products",
+                "protocol": "https",
+                "host": ["reactecomgdi", "onrender", "com"],
+                "path": ["api", "products"]
+              }
+            },
+            "response": []
+          }
+        ]
+      },
+      {
+        "name": "Cart",
+        "item": [
+          {
+            "name": "Add to Cart",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": 
+                  {
+                    "userId": "123",
+                    "productId": "64f1b2b3c9e77b001a8b4567",
+                    "quantity": 1
+                  }
+              },
+              "url": {
+                "raw": "https://reactecomgdi.onrender.com/api/cart",
+                "protocol": "https",
+                "host": ["reactecomgdi", "onrender", "com"],
+                "path": ["api", "cart"]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "View Cart",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "https://reactecomgdi.onrender.com/api/cart/123",
+                "protocol": "https",
+                "host": ["reactecomgdi", "onrender", "com"],
+                "path": ["api", "cart", "123"]
+              }
+            },
+            "response": []
+          }
+        ]
+      }
+    ]
+  }
