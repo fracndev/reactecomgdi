@@ -3,7 +3,7 @@ const Product = require('../models/Product');
 const router = express.Router();
 
 // Create a product
-router.post('/products', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const { name, amount, image, description } = req.body;
     const product = new Product({ name, amount, image, description });
@@ -15,7 +15,7 @@ router.post('/products', async (req, res) => {
 });
 
 // Get all products
-router.get('/products', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const products = await Product.find();
     res.status(200).json(products);
@@ -25,7 +25,7 @@ router.get('/products', async (req, res) => {
 });
 
 // Update a product
-router.put('/products/:id', async (req, res) => {
+router.put('/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const { name, amount, image, description } = req.body;
@@ -41,7 +41,7 @@ router.put('/products/:id', async (req, res) => {
 });
 
 // Delete a product
-router.delete('/products/:id', async (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     const { id } = req.params;
     await Product.findByIdAndDelete(id);

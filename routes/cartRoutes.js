@@ -4,7 +4,7 @@ const Product = require('../models/Product');
 const router = express.Router();
 
 // Add to cart
-router.post('/cart', async (req, res) => {
+router.post('/', async (req, res) => {
   const { userId, productId, quantity } = req.body;
 
   try {
@@ -37,7 +37,7 @@ router.post('/cart', async (req, res) => {
 });
 
 // View cart
-router.get('/cart/:userId', async (req, res) => {
+router.get('/:userId', async (req, res) => {
   const { userId } = req.params;
 
   try {
