@@ -5,7 +5,7 @@ const router = express.Router();
 
 // Add to cart router
 router.post('/', async (req, res) => {
-  const { user: userId, productId, quantity } = req.body;
+  const { userId: userId, productId, quantity } = req.body;
 
   try {
     // Find cart by numeric userId
